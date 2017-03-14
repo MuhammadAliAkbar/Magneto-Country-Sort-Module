@@ -1,4 +1,5 @@
 ﻿# Magneto-Country-Sort-Module
+
 Magneto Country Sort Module is created to sort the countries according to our custom need.
 For Example we see a list of countries like:
 
@@ -33,71 +34,39 @@ You are at right place.
 Just Copy the module to your app/code/local/Country and the file placed in etc/modules to app/etc/modules
 
 #Configure
+
 In the Collection.php you'll see this method
 
 public function rearrange($options)
 {
 	$indx = array(
-		//Don't Change this Index
+	//Don't Change this Index
 		array
-        (
-            'value' => '',
-            'index' => '0'
-        ),
+		(
+			'value' => '',
+			'index' => '0'
+		),
 		//Safe to add indexes from here onwards
 		array
-        (
-            'value' => 'PK',
-            'index' => '1'
-        ),
-        array
-        (
-            'value' => 'US',
-            'index' => '2'
-        ),
-        array
-        (
-            'value' => 'GB',
-            'index' => '3'
-        ),
-    	array
-        (
-            'value' => 'CA',
-            'index' => '4'
-        ),
-    	array
-        (
-            'value' => 'AU',
-            'index' => '5'
-        ),
-    	array
-        (
-            'value' => 'AE',
-            'index' => '6'
-        )
-    );
-    //this is the count of indexes
-	$ic = count($indx);
-	//this is the count of main array
-	$mc = count($options);
-	for ($i=1; $i < $ic ; $i++) { 
-		for ($j=0; $j < $mc; $j++) { 
-			if ($options[$j]['value'] == $indx[$i]['value']) {
-				$temp = $options[$indx[$i]['index']];
-				$options[$indx[$i]['index']] = $options[$j];
-				$options[$j] = $temp;
-			}
-		}
-	}
-	return $options;
+		(
+			'value' => 'PK',
+			'index' => '1'
+		),
+		array
+		(
+			'value' => 'US',
+			'index' => '2'
+		)
+		...
+		return $options;
 }
 
 Just add or remove the array
 
 array
 (
-    'value' => 'PK',
-    'index' => '1'
+	'value' => 'PK',
+	'index' => '1'
 ),
 
 the index over here shows the position of the country for example if you want Pakistan to be on 1st position then you'll have to change the index.
