@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<modules>
+		<Magentotutorial_Override>
+			<version>0.1.0</version>
+		</Magentotutorial_Override>
+	</modules>
+	<frontend>
+		<routers>
+			<rearrange>
+				<use>standard</use>
+				<args>
+					<module>Country_Rearrange</module>
+					<frontName>rearrange</frontName>
+				</args>
+			</rearrange>
+		</routers>
+	</frontend>
+	<global>
+        <models>
+            <directory_resource>
+            	<rewrite>
+                	<country_collection>Country_Rearrange_Model_Resource_Directory_Country_Collection</country_collection>
+                </rewrite>
+            </directory_resource>
+        </models>
+    </global>
+</config>
